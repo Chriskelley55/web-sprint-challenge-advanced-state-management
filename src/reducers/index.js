@@ -1,7 +1,7 @@
-import { FETCH_FAIL, FETCH_START, FETCH_SUCCESS, FETCH_ADD, FETCH_ERROR } from "../actions"
+import { FETCH_FAIL, FETCH_START, FETCH_SUCCESS, FETCH_ADD, FETCH_ERROR, ERROR_MESSAGE } from "../actions"
 
 export const initialState = {
-    smurfs: [
+    smurf: [
             {
             isLoading: false,
             error: '',
@@ -21,32 +21,37 @@ const reducer = (state = initialState, action) =>{
         case(FETCH_START):
             return({
                 ...state, 
-                smurfs: [],
+                smurf: [],
                 isLoading: true,
                 error: ''
             })
         case(FETCH_SUCCESS):
             return({
                 ...state,
-                smurfs: action.payload,
+                smurf: action.payload,
                 isLoading: false,
                 error: ''
             })
         case(FETCH_FAIL):
             return({
                 ...state,
-                smurfs: [],
+                smurf: [],
                 isLoading: false,
                 error: action.payload
             })
         case(FETCH_ADD):
             return({
                 ...state,
-                smurf: [...state.smurfs, action.payload]
+                smurf: [...state.smurf, action.payload]
             })
         case(FETCH_ERROR):
             return({
                 ...state,
+                error: action.payload
+            })
+        case(ERROR_MESSAGE):
+            return({
+                ...state, 
                 error: action.payload
             })
         default:
