@@ -113,8 +113,18 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 
+A: No need for prop drilling. Helps store all data in a context object that can be retrieved by any component.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+A: Actions are used to send data from app to store to manipulate state object.
+    Reducers are functions that modify state object. Takes in state and action as arguments then returns a new piece of state. 
+    Store is a JS object tasked with keeping track of data. 
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
 
+A: Redux-thunk allows us to make reducer flows aysnch. That way we can modify action creators in a way that returns a function. Redux-thunk makes API calls inside of our action creators and passes the data to store.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+A: During this sprint I enjoyed working with Redux. I found that it was a great way to store data in a central way so the need to create many pieces of state for each component was unnecessary. And it was all stored in seperately to make the code cleaner to work with. 
